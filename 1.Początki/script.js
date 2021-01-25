@@ -9,3 +9,6 @@ console.log(5*2);  // wynik: 10
 
 
 // zad.3
+console.log("Hello World"); //Tekst Hello world wyświetla się prawidłowo
+console.log(Hello World);  //błąd: brak Hello World
+console.log("Hello World)  //błąd: brak cudzysłowia
