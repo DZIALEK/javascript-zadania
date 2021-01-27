@@ -1,6 +1,6 @@
 // zad.1
 console.log("Paweł");
-
+// dodatkowy komunikat !!!!
 
 // zad.2
 console.log(12+32); //wynik: 44
