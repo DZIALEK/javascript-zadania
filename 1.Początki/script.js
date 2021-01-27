@@ -1,6 +1,7 @@
 // zad.1
 console.log("Paweł");
 // dodatkowy komunikat !!!!
+// komentarz do brancha demo
 
 // zad.2
 console.log(12+32); //wynik: 44
