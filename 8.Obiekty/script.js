@@ -63,3 +63,21 @@ let car = {
 };
 console.log(car.object.prop);
 
+
+
+
+// zad.6
+let car = {
+  object: {
+    prop: "wlasciwosc"
+  }
+};
+
+function sayHello(){
+  console.log("Hello");
+}
+console.log(car.object.prop);
+
+car.variant = "hatchback";
+car.greetDriver = sayHello;
+car.greetDriver();
