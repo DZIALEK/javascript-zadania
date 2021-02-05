@@ -76,3 +76,30 @@ console.log(calc2.showMemory());
 
 
 // zad.3
+let firstGame;
+let secondGame;
+
+function Game() {}
+
+Game.prototype.number = 0;
+Game.prototype.gameInterval = null;
+
+Game.prototype.start = function (anotherGame) {
+  Game.prototype.gameInterval = setInterval(() => {
+    Game.prototype.gameNumber = Math.floor(Math.random() * 10) + 1;
+    console.log("Losowy numer: ", Game.prototype.gameNumber);
+    anotherGame.check();
+  }, 1000);
+};
+
+Game.prototype.check = function () {
+  if (Game.prototype.gameNumber > 5) {
+    console.log("Koniec");
+    clearInterval(Game.prototype.gameInterval);
+  }
+};
+
+firstGame = new Game();
+secondGame = new Game();
+
+firstGame.start(secondGame);
