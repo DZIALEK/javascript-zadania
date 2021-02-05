@@ -97,4 +97,79 @@ for (let i = exampleArray.length - 1; i >= 0; i--) {
 
 
 // zad.4
+const result = (array) => {
+  const sum = array.reduce((sum, element) => (sum += element));
+  console.log(`Suma wszystkich elementów tablicy: ${sum}`);
+};
 
+result([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+
+
+// zad.5
+
+const changeArrayElements = (array) => {
+  const sum = array.reduce((sum, element) => (sum += element));
+  const average = sum / array.length;
+
+  console.log(`\nwszystkie elementy tej tablicy pomnożone przez średnią tablicy`);
+  array.forEach((element) => {
+    console.log(element * average);
+  });
+};
+
+changeArrayElements([1, 2, 3, 4, 5, 6, 7]);
+
+
+
+// zad.6
+
+let array = [1, 2, 3, 4, 5, 6, 7];
+
+const evenAvg = (array) => {
+  const even = array.filter(element => element % 2 === 0);
+  const summaryEven = even.reduce((a,b) => a + b);
+  
+  console.log(summaryEven / even.length)
+}
+
+evenAvg(array);
+
+
+
+// zad.7
+
+const num = [2, 11, 33, 5, 1, 24];
+function comapreNum(a, b) {
+  return a - b;
+}
+console.log(num.sort(comapreNum));
+
+
+
+// zad.8
+
+const arr1 = [10,20,30,40,50];
+const arr2 = [1,2,3,4,5];
+const newArr = [];
+
+function addIndexes(arr1, arr2) {
+  arr1.forEach((num1, i) => {
+    newArr.push(num1 + arr2[i]);
+  })
+  return newArr;
+}
+
+console.log(addIndexes(arr1, arr2));
+
+
+// zad.9 - zmienione zad.10
+
+function invert(arr){
+  for(let i = 0; i < arr.length; i++){
+    arr[i] = -arr[i];
+  }
+  return arr;
+}
+
+console.log(invert([-2, -1, 0, 1, 2]));
