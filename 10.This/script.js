@@ -76,3 +76,34 @@ person2.getMeals();
 
 
 
+// zad.3
+
+function Calculator(a,b){
+  this.a = a;
+  this.b = b;
+  
+  this.add =  function(){
+    return (this.a + this.b);
+  }
+  this.sub = function(){
+    return (this.a - this.b);
+  }
+  this.mul = function(){
+    return (this.a * this.b);
+  }
+  this.div = function(){
+    if (!b === 0)
+      return (this.a / this.b);
+    else{
+      return "Zmień wartość B, nie można dzielić przez zero";
+    }
+  }
+}
+
+const Num1 = new Calculator(5,6);
+const Num2 = new Calculator(4,0);
+
+console.log(Num1.add());
+console.log(Num1.mul());
+console.log(Num2.sub());
+console.log(Num2.div());
