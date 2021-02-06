@@ -15,6 +15,11 @@ bestFruits.forEach(elements => {
 document.body.appendChild(newUl);
 
 
+// zad.3
+
+
+
+
 
 // zad.4
 let button = document.createElement("button");
@@ -178,6 +183,73 @@ function FirstLetter(element){
     textInInput = element.charAt(0).toUpperCase() + element.slice(1);
     return textInInput;
   }
+
+
+
+// zad.11
+
+
+
+
+// zad.12
+
+let Object = {
+  Property: "",
+  findAndReplace: function () {
+    const ReplaceString = "Ala";
+    const index = this.Property.indexOf(ReplaceString);
+    if (index !== -1) {
+      this.Property = this.Property.replace(
+        ReplaceString,
+        "Ola"
+      );
+      console.log(this.Property);
+    } else {
+      let div = document.createElement("div");
+      div.innerText = "\nSłowo Ala nie występuje w tekście.\n";
+      document.body.appendChild(div);
+    }//k
+  },
+};
+
+const addPropertyToObject = (string) => {
+  Object.Property = string;
+};
+
+addPropertyToObject("Ala ma kota, Marcin ma żyrafę");
+Object.findAndReplace();
+
+addPropertyToObject("Ola ma kota, Marcin ma żyrafę");
+Object.findAndReplace();
+
+
+
+
+// zad.13
+
+let arrayOfStrings = ["dsgfdg", "dsfghhj", "cdfhgjkkuhjgfc3","jfkdhgf","jkdgfda"];
+function Count(newTable) {
+    let numberLetters = 0;
+    newTable.forEach(i => {
+        let isStr = i.replace(/[^a-z]/gi, '');
+        numberLetters += isStr.length;
+    });
+    return numberLetters;
+}
+function sumNumbers(newTable) {
+    const numbers = newTable.map(i => i.match(/[0-9]+/g));
+    const allNumbers = numbers.flat();
+    return allNumbers.reduce((x, y) => Number(x) + Number(y));
+}
+function avg(newTable) {
+    let numbers = newTable.map(v => v.match(/[0-9]+/g));
+    let allNumbers = numbers.flat().filter(i => i);
+    let sum = allNumbers.reduce((x, y) => Number(x) + Number(y));
+    return sum / allNumbers.length;
+}
+console.log(Count(arrayOfStrings));
+console.log(sumNumbers(arrayOfStrings));
+console.log(avg(arrayOfStrings));
 
 
 
