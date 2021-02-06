@@ -140,3 +140,31 @@ function FirstLetter(element){
     return textInInput;
   }
 
+
+
+
+// zad.14
+
+let object = {
+    name: '',
+    surname: '',
+    age: '',
+  };
+  
+  function modifyObject(name, surname, age) {
+    object.name = 'Pawełek';
+    object.surname = 'Dz.';
+    object.age = 34;
+  
+    if (object.name.length >= 5 || object.surname.length >= 5) {
+      let previousButton = document.createElement("button");
+      previousButton.textContent = "Stan początkowy"
+      previousButton.addEventListener('click', () => {
+        object = { name: '', surname: '', age: '' }
+        console.log(object);
+      });
+      document.body.appendChild(previousButton);
+    }
+  }
+modifyObject();
+console.log(object);
