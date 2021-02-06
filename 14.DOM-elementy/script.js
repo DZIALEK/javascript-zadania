@@ -41,3 +41,67 @@ console.log(firstNumber-secondNumber-thirdNumber);
 
 
 // zad.4
+document.getElementById("spanText").innerHTML="inny tekst";
+
+
+
+// zad.5
+document.getElementById("spanText").className="secondClassName";
+
+
+
+// zad.6
+let classesDiv = document.querySelector("#classes");
+let showElementsClass = classesDiv.classList;
+
+let addString = (showElementsClass) => {
+    console.log(showElementsClass);
+    showElementsClass.forEach(x => console.log(x));
+    let classArray = [...showElementsClass];
+    console.log(classArray.join('+'));
+
+    classesDiv.className = "";
+    console.log(classesDiv);
+    console.log("Usunięto wszystkie klasy");
+}
+addString(showElementsClass);
+
+
+
+// zad.7
+
+const ListModify = (elements) => {
+  console.log(elements);
+  for (let i = 0; i < elements.length; i++) {
+    if (!elements[i].dataset["data-text"]) {
+      elements[i].setAttribute("data-text", "text");
+    }
+  }
+};
+const li = document.getElementById("longList").getElementsByTagName("li");
+ListModify(li);
+
+
+
+// zad.8
+let elementDiv = document.getElementById("myDiv");
+let object = {
+  newClass: "string_z_parametru"
+}
+let secondClass = "mynewclass";
+
+const funString = (object,string) => {
+  object["newClass"] = string;
+  console.log(object)
+}
+
+const funVariable = (elementDiv,one) => {
+  elementDiv.classList.add(one.newClass)
+}
+
+funString(object,secondClass);
+funVariable(elementDiv,object);
+
+
+
+// zad.9
