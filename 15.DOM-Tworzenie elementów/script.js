@@ -58,6 +58,45 @@ SpanTwo.innerHTML = 'To jest span'
 // zad.7
 
 
+// zad.8
+
+const newBr = document.createElement("br");
+document.body.append(newBr);
+
+const instruction = document.createElement("div");
+instruction.innerText =
+  "Dodaj do strony: rodzaj; tekst; kolor; ilość";
+document.body.append(instruction);
+
+let Input = document.createElement("input");
+Input.setAttribute("type", "text");
+document.body.append(Input);
+
+let newButton = document.createElement("button");
+newButton.innerText = "Dodaj";
+newButton.addEventListener("click", function () {
+  let inputValue = input.value;
+  let values = inputValue.split(";");
+
+  for (let i = 0; i < count; i++) {
+    let newElement = null;
+
+    try {
+      addElement = document.createElement(values[0]);
+      addElement.style.color = values[2];
+      addElement.innerText = values[1];
+    } catch (err) {
+      console.log(err);
+    }
+
+    if (addElement) {
+      document.body.appendChild(addElement);
+    }
+  }
+});
+document.body.append(newButton);
+
+
 
 //zad.9
 
