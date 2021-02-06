@@ -27,3 +27,35 @@ document.body.appendChild(button);
 
 
 //zad.5
+let numberOfDiv = Math.floor(Math.random() * 7);
+for (let i = 0; i < numberOfDiv; i++) {
+    let newDiv = document.createElement('div');
+    newDiv.innerText = `to jest div numer ${i}`;
+    document.body.appendChild(newDiv);
+}
+
+
+
+// zad.6
+let DivOne = document.createElement('div');
+let DivTwo = document.createElement('div');
+let DivThree = document.createElement('div');
+let SpanOne = document.createElement('span');
+let SpanTwo = document.createElement('span');
+
+document.body.appendChild(DivOne);
+DivOne.innerHTML = 'To jest div'
+document.body.appendChild(SpanOne);
+SpanOne.innerHTML = 'To jest span'
+document.body.appendChild(DivTwo);
+DivTwo.appendChild(DivThree);
+DivThree.innerHTML = 'To jest div'
+document.body.appendChild(SpanTwo);
+SpanTwo.innerHTML = 'To jest span'
+
+
+
+// zad.7
+
+
+
