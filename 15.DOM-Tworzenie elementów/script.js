@@ -4,6 +4,7 @@ newElementDiv.innerText = "To jest nowy element";
 document.body.appendChild(newElementDiv);
 
 
+
 //zad.2
 let bestFruits = ["malina","banan","jabłko","winogron","pomarańcza"];
 let newUl = document.createElement("ul");
@@ -15,8 +16,23 @@ bestFruits.forEach(elements => {
 document.body.appendChild(newUl);
 
 
-// zad.3
 
+// zad.3
+const btnRemove = document.createElement("button")
+document.body.appendChild(btnRemove);
+btnRemove.innerHTML = "Remove"
+btnRemove.addEventListener("click", function(){
+removeIt();
+}
+    
+})
+
+function removeIt(){
+    const elementsToRemove = document.getElementById("list").children;
+    for (let i = 0; i < elementsToRemove.length; i++){
+        elementsToRemove[i].remove();
+        console.log(Usunięto: ${elementsToRemove[i].innerText})
+    }
 
 
 
@@ -30,6 +46,7 @@ button.addEventListener("click", function() {
 });
 document.body.appendChild(button);
 
+    
 
 //zad.5
 let numberOfDiv = Math.floor(Math.random() * 7);
