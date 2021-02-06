@@ -59,3 +59,84 @@ SpanTwo.innerHTML = 'To jest span'
 
 
 
+//zad.9
+
+let Forms = [
+    "Imie",
+  "Nazwisko",
+  "Wiek",
+  "Ilość dzieci"
+]
+Forms.forEach(element => {
+    let newDiv = document.createElement("div");
+    let newLabel = document.createElement("label");
+    let newField = document.createElement("input");
+    newLabel.innerText = element + ":";
+    document.body.appendChild(newDiv);
+    newDiv.appendChild(newLabel);
+    newDiv.appendChild(newField);
+});
+const buttonWiecej = document.createElement("button");
+buttonWiecej.innerText = "Więcej";
+document.body.appendChild(buttonWiecej);
+
+buttonWiecej.addEventListener("click", function(){
+  const inputs = document.querySelectorAll("input");
+  
+  if(!window.functionIsSet){
+    let table = document.createElement("table");
+    let row = document.createElement("tr");
+
+      Forms.forEach(element => {
+        let column = document.createElement("th");
+        column.innerText = element;
+        row.appendChild(column);
+        });
+    
+    document.body.appendChild(table);
+    table.appendChild(row);
+  }
+  window.functionIsSet = true;
+  
+  
+  function createRow(){
+    const table = document.querySelector("table")
+    const row = document.createElement("tr");
+        inputs.forEach(element => {
+          const col = document.createElement("th");
+          let textInInput = element.value;
+          col.innerText = textInInput;
+          element.value = "";
+          row.appendChild(col);
+        })
+    table.appendChild(row);
+    
+    let buttonUsun = document.createElement("button");
+    buttonUsun.innerText = "Usuń";
+    row.appendChild(buttonUsun);
+    buttonUsun.addEventListener("click", function(){
+      row.remove();
+      let buttons = document.querySelectorAll("button").length;
+      if(buttons <= 1){
+        let table = document.querySelector("table");
+        table.remove();
+        window.functionIsSet = false;
+      }
+    })
+  }
+  createRow()
+  
+})
+window.functionIsSet = false;
+
+
+
+// zad.10
+
+column.innerText = FirstLetter(element); 
+function FirstLetter(element){
+  
+    textInInput = element.charAt(0).toUpperCase() + element.slice(1);
+    return textInInput;
+  }
+
