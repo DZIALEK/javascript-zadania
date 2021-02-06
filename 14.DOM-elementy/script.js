@@ -105,3 +105,40 @@ funVariable(elementDiv,object);
 
 
 // zad.9
+const element = document.getElementById("numbers");
+
+const addClass =() => {
+  const parameter =Math.floor(Math.random()*10);
+  
+  if(parameter % 2 == 0) div.className = "even";
+  else div.className = "odd";
+};
+addClass();
+
+
+
+// zad.10
+
+let getData = (element) => {
+  let children = element.children;
+  let arrayList = [];
+
+  for (let i = 0; i < children.length; i++) {
+    arrayList.push(children[i].textContent);
+  }
+  return arrayList;
+};
+let arrayList = getData(document.getElementById("longList"));
+console.log(arrayList);
+
+
+
+
+// zad.11
+function randomNumber (Elements) {
+    Elements.querySelectorAll('li').forEach(children => {
+        children.dataset.oldnumber = children.innerText;
+        children.innerText = Math.round(Math.random() * 10);
+    });
+}
+randomNumber(document.getElementById('longList'));
