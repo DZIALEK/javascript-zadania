@@ -79,6 +79,59 @@ SpanTwo.innerHTML = 'To jest span'
 
 // zad.7
 
+const firstListItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const secondListItems = [];
+
+const firstList = document.createElement("ul");
+const secondList = document.createElement("ul");
+
+const firstListButton = document.createElement("button");
+const secondListButton = document.createElement("button");
+
+firstListButton.innerText = "przenieś w dół";
+secondListButton.innerText = "przenieś w górę";
+
+firstListButton.addEventListener("click", function () {
+  secondListItems.push(firstListItems.pop());
+  createElementsInLists();
+});
+
+secondListButton.addEventListener("click", function () {
+  firstListItems.push(secondListItems.pop());
+  createElementsInLists();
+});
+
+const createElementsInLists = () => {
+  firstList.innerHTML = "";
+  firstListItems.forEach((item) => {
+    const p = document.createElement("p");
+    p.append(item);
+
+    firstList.appendChild(p);
+  });
+
+  secondList.innerHTML = "";
+  secondListItems.forEach((item) => {
+    const p = document.createElement("p");
+    p.append(item);
+
+    secondList.appendChild(p);
+  });
+
+  firstListButton.disabled = firstListItems.length === 0 ? true : false;
+  secondListButton.disabled = secondListItems.length === 0 ? true : false;
+};
+
+createElementsInLists();
+
+document.body.appendChild(firstList);
+document.body.appendChild(firstListButton);
+
+document.body.appendChild(secondList);
+document.body.appendChild(secondListButton);
+ 
+    
+    
 
 // zad.8
 
