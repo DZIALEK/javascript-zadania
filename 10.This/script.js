@@ -107,3 +107,33 @@ console.log(Num1.add());
 console.log(Num1.mul());
 console.log(Num2.sub());
 console.log(Num2.div());
+
+
+
+// zad.4
+let stairs = {
+  yourStair: 0,
+  goUp: function() {
+    this.yourStair++;
+  },
+    
+    goDown: function() {
+      if (this.yourStair <= 0) {
+        this.yourStair = 0;
+        console.log("you reached the lowest stair");
+        
+        return;
+      }
+      this.yourStair--;
+    },
+      tellMeMyStair: function() { 
+        return "Your Stair: " +(this.yourStair);
+    }
+};
+
+
+console.log(stairs.tellMeMyStair());
+stairs.goUp();
+console.log(stairs.tellMeMyStair());
+stairs.goDown();
+stairs.goDown();
