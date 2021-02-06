@@ -205,7 +205,34 @@ function FirstLetter(element){
 
 // zad.11
 
-
+//zadanie 11
+function findNumbersInString(newString){
+  if(/\d/.test(newString)){
+    let multi = 1;
+    let add = 0;
+    for(let i = 0; i < newString.length; i++){
+      let nextElement = newString.charAt(i)
+      if(/\d/.test(nextElement)){
+        multi *= parseInt(nextElement);
+        add += parseInt(nextElement);
+      }
+    }
+    console.log(`Suma: ${add}`)
+    console.log(`Ilość div: ${multi}`)
+    for(let i = 0; i < multi; i++){
+      const div = document.createElement("div");
+      div.innerText = newString;
+      document.body.appendChild(div);
+    }   
+    
+    
+  }else{
+    console.log("String nie posiada liczb")
+  }
+}
+findNumbersInString ("3saf2dsd1d2afdd1sa2")
+    
+    
 
 
 // zad.12
