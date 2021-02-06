@@ -64,4 +64,66 @@ document.getElementById("input-test").addEventListener("input",validateNumber);
 
 // zad.5
 
+function clickButton(){
+  const button = document.getElementById("ex5-button");
+  const a=0;
+  button.addEventListener("click", counting);
+  
+  function counting(){
+    a++;
+    button.nextElementSibling.innerText = a;
+    if (a===10){
+      button.removeEventListener("click",counting);
+    }
+  }
+}
+clickButton()
+
+
+
+// zad.6
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 200) {
+    document.body.style.backgroundColor = "red";
+  }
+  else {
+    document.body.style.backgroundColor = "white";
+      }
+})
+
+
+
+// zad.7
+let calc = document.getElementById("calculator");
+let buttons = calc.querySelectorAll("button");
+let number = null;
+let number2 = 0;
+let input = calc.querySelector("input");
+
+for(let i=0; i<buttons.length; i++){
+  buttons[i].addEventListener("click", function(){
+    if(this.innerText === "+"){
+      input.value = number + number2;
+      number = null;
+      number2 = null;
+    } else if (this.innerText ==="-"){
+      
+      
+    }else if (this.innerText ==="*"){ 
+      
+      
+    }else if (this.innerText ==="/"){
+      
+      
+    }else {
+      if (number === null){
+        input.value ="";
+        number = Number(this.innerText);
+      }else{
+        number2 = Number(this.innerText);
+      }
+    }
+    
+  })
+}
 
